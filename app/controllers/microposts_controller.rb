@@ -4,6 +4,7 @@ class MicropostsController < ApplicationController
   
   def create
     @micropost = current_user.microposts.build(micropost_params)
+    # @micropost.user = current_user
     if @micropost.save
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to  root_url
